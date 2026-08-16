@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enclavia - Cryptographic Security for AI Agents</title>
+    <title>Enclavia OS | Enclavia Attest — Cryptographic Security for AI Agents</title>
+    <meta name="description" content="Enclavia Attest is a hardware-enforced egress proxy for autonomous AI agents, built on AWS Nitro Enclaves. Part of Enclavia OS, the platform for securing and operating AI agents in production.">
+    <meta property="og:title" content="Enclavia Attest — Cryptographic Security for AI Agents">
+    <meta property="og:description" content="A hardware-enforced egress proxy that mathematically guarantees your AI agents' actions cannot be tampered with or exfiltrated. Zero code changes required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.enclavia.xyz/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Enclavia Security",
+      "alternateName": ["Enclavia", "Enclavia OS", "Enclavia Attest", "Enclavia Security"],
+      "url": "https://www.enclavia.xyz",
+      "sameAs": [
+        "https://github.com/Enclavia-OS"
+      ]
+    }
+    </script>
     <!-- Add this line for the favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'></path></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,10 +52,11 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                Enclavia
+                Enclavia <span class="text-brand font-mono text-sm font-normal ml-1">OS</span>
             </a>
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 text-sm items-center">
+                <a href="#products" class="hover:text-white transition">Products</a>
                 <a href="#problem" class="hover:text-white transition">The Problem</a>
                 <a href="#solution" class="hover:text-white transition">Solution</a>
                 <a href="sandbox.html" class="hover:text-white transition">Sandbox</a>
@@ -52,6 +70,7 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden flex-col space-y-3 px-6 pb-4 text-sm">
+            <a href="#products" class="block hover:text-white transition">Products</a>
             <a href="#problem" class="block hover:text-white transition">The Problem</a>
             <a href="#solution" class="block hover:text-white transition">Solution</a>
             <a href="sandbox.html" class="block hover:text-white transition">Sandbox</a>
@@ -64,7 +83,7 @@
     <section class="pt-40 pb-20 px-6 text-center relative overflow-hidden">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-brand/10 rounded-full blur-3xl"></div>
         <div class="relative max-w-4xl mx-auto">
-            <span class="inline-block bg-slate-800 text-brand text-xs font-mono px-3 py-1 rounded-full mb-6 border border-slate-700">Powered by AWS Nitro Enclaves</span>
+            <span class="inline-block bg-slate-800 text-brand text-xs font-mono px-3 py-1 rounded-full mb-6 border border-slate-700">Enclavia Attest · Powered by AWS Nitro Enclaves</span>
             <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
                 Cryptographic Security for <br> Autonomous AI Agents
             </h1>
@@ -80,6 +99,26 @@
             <div class="mt-12 max-w-3xl mx-auto">
                 <div class="aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-700">
                     <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/aBAunsZ7TXE" title="Enclavia Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 px-6 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Enclavia OS</h2>
+            <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12">A growing suite of tools for running AI agents safely and predictably.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-darkcard p-8 rounded-xl border border-slate-800 hover:border-brand/50 transition">
+                    <span class="inline-block bg-green-500/10 text-green-400 text-xs font-mono px-2 py-1 rounded mb-4">Available Now</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Enclavia Attest</h3>
+                    <p class="text-sm text-slate-400">Hardware-enforced egress proxy for autonomous agents. Blocks prompt injection, data exfiltration, and insider tampering with cryptographic attestation on every action.</p>
+                </div>
+                <div class="bg-darkcard p-8 rounded-xl border border-slate-800 hover:border-brand/50 transition">
+                    <span class="inline-block bg-slate-700 text-slate-300 text-xs font-mono px-2 py-1 rounded mb-4">Coming Soon</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Enclavia Meter</h3>
+                    <p class="text-sm text-slate-400">Token and dollar-spend tracking per agent run, backed by the same attestation trail as Attest &mdash; so cost data is verifiable, not just reported.</p>
                 </div>
             </div>
         </div>
@@ -237,10 +276,10 @@
     <!-- Footer -->
     <footer class="py-8 px-6 border-t border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <p class="text-sm text-slate-500">© 2026 Enclavia Labs. All rights reserved.</p>
+            <p class="text-sm text-slate-500">© 2026 Enclavia OS. All rights reserved.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="https://app.enclavia.xyz" class="text-sm text-slate-500 hover:text-white transition">Dashboard</a>
-                <a href="https://github.com/Enclavia-Labs" class="text-sm text-slate-500 hover:text-white transition">GitHub</a>
+                <a href="https://github.com/Enclavia-OS" class="text-sm text-slate-500 hover:text-white transition">GitHub</a>
             </div>
         </div>
     </footer>
