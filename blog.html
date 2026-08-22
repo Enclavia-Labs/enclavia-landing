@@ -177,14 +177,14 @@
     ┌────┴────┐
     ▼         ▼
  Approved   Blocked
- (KMS       (DLP Violation
- unlocks)    Logged)</pre>
+ (Attested  (DLP Violation
+ decision)   Logged)</pre>
             </div>
 
             <h4 class="text-xl font-bold text-white mt-8 mb-2">What Makes This Different</h4>
             <ol class="list-decimal list-inside space-y-2 ml-4">
                 <li><strong class="text-white">Cryptographic Attestation:</strong> Every decision generates an AWS NSM Attestation Document proving the policy ran untampered inside the secure hardware. Not a log entry — a cryptographic proof.</li>
-                <li><strong class="text-white">Rogue Insider Protection:</strong> The policy is bound to the TEE's PCR0 hash. If anyone — even a compromised DevOps engineer — tampers with <code class="bg-slate-800 text-brand px-1.5 py-0.5 rounded text-sm">policy.json</code>, the hash changes and AWS KMS mathematically denies access to the agent's keys.</li>
+                <li><strong class="text-white">Rogue Insider Protection:</strong> The policy is bound to the TEE's PCR0 hash. If anyone — even a compromised DevOps engineer — tampers with <code class="bg-slate-800 text-brand px-1.5 py-0.5 rounded text-sm">policy.json</code>, the hash changes and the platform refuses to attest the enclave. Runtime policies are only enforced with a valid Enclavia signature.</li>
                 <li><strong class="text-white">Zero-Code Integration:</strong> Your existing agent runs unchanged. Enclavia acts as an egress proxy. No SDK imports. No core logic changes.</li>
             </ol>
 
@@ -199,7 +199,7 @@
             <ol class="list-decimal list-inside space-y-2 ml-4 mb-4">
                 <li><strong class="text-white">Intercept:</strong> The shell command action is captured by Enclavia before execution</li>
                 <li><strong class="text-white">Evaluate:</strong> The TEE policy engine checks: "Does this action match allowed patterns? Does it attempt network egress to an unapproved domain? Does it contain shell pipe operators?"</li>
-                <li><strong class="text-white">Block:</strong> Action violates DLP policy. KMS key remains locked. Attestation document generated.</li>
+                <li><strong class="text-white">Block:</strong> Action violates DLP policy. Attestation document generated.</li>
                 <li><strong class="text-white">Log:</strong> DLP violation logged with full cryptographic proof of the evaluation context.</li>
             </ol>
             <p>The developer sees: <em>"Action blocked by security policy. Attestation: nsm://attest/abc123..."</em></p>
