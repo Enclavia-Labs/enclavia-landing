@@ -6,7 +6,7 @@
     <title>Enclavia OS | Enclavia Attest — Cryptographic Security for AI Agents</title>
     <meta name="description" content="Enclavia Attest is a hardware-enforced egress proxy for autonomous AI agents, built on AWS Nitro Enclaves. Part of Enclavia OS, the platform for securing and operating AI agents in production.">
     <meta property="og:title" content="Enclavia Attest — Cryptographic Security for AI Agents">
-    <meta property="og:description" content="A hardware-enforced egress proxy that mathematically guarantees your AI agents' actions cannot be tampered with or exfiltrated. Zero code changes required.">
+    <meta property="og:description" content="A hardware-enforced egress proxy that mathematically guarantees your AI agents' actions cannot be tampered with or exfiltrated. No SDK import required.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.enclavia.xyz/">
     <script type="application/ld+json">
@@ -88,7 +88,7 @@
                 Cryptographic Security for <br> Autonomous AI Agents
             </h1>
             <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-            Enclavia acts as a hardware-enforced egress proxy. We let your LLM think wherever it wants, but we mathematically guarantee its actions cannot be tampered with or exfiltrated. Zero code changes required.
+            Enclavia acts as a hardware-enforced egress proxy. We let your LLM think wherever it wants, but we mathematically guarantee its actions cannot be tampered with or exfiltrated. No SDK import or core-logic changes required.
 	    </p>
             <div class="flex justify-center gap-4">
                 <a href="mailto:sales@enclavia.xyz" class="bg-brand hover:bg-blue-500 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg shadow-brand/20">Request a Demo</a>
@@ -116,9 +116,9 @@
                     <p class="text-sm text-slate-400">Hardware-enforced egress proxy for autonomous agents. Blocks prompt injection, data exfiltration, and insider tampering with cryptographic attestation on every action.</p>
                 </div>
                 <div class="bg-darkcard p-8 rounded-xl border border-slate-800 hover:border-brand/50 transition">
-                    <span class="inline-block bg-slate-700 text-slate-300 text-xs font-mono px-2 py-1 rounded mb-4">Coming Soon</span>
+                    <span class="inline-block bg-green-500/10 text-green-400 text-xs font-mono px-2 py-1 rounded mb-4">Available Now</span>
                     <h3 class="text-xl font-bold text-white mb-2">Enclavia Meter</h3>
-                    <p class="text-sm text-slate-400">Token and dollar-spend tracking per agent run, backed by the same attestation trail as Attest &mdash; so cost data is verifiable, not just reported.</p>
+                    <p class="text-sm text-slate-400">Token and dollar-spend tracking per agent run with org budgets, per-model cost limits, and cost-aware provider routing &mdash; backed by the same attestation trail as Attest.</p>
                 </div>
             </div>
         </div>
@@ -173,13 +173,13 @@
                     <span class="bg-slate-800 px-3 py-1 rounded text-brand">3. TEE Evaluates</span>
                 </div>
                 <p class="text-green-400 mb-2">// If safe:</p>
-                <p class="mb-4">Action approved. KMS unlocks key. Attestation document generated.</p>
+                <p class="mb-4">Action approved. Attestation document generated.</p>
                 <p class="text-red-400 mb-2">// If malicious (e.g., 0xH4CK3R):</p>
                 <p>Action blocked. Transaction aborted. DLP violation logged.</p>
             </div>
 
             <div class="mt-12 text-center">
-                <h3 class="text-2xl font-bold text-white mb-4">True Zero-Code Integration</h3>
+                <h3 class="text-2xl font-bold text-white mb-4">Zero-SDK Integration</h3>
                 <p class="text-slate-400 mb-8 max-w-2xl mx-auto">Enclavia seamlessly wraps your existing AI agents without requiring an SDK or modifying a single line of your core logic. Your LLM runs exactly as it does today—just securely isolated from the outside world.</p>
                 
                 <div class="flex flex-col md:flex-row justify-center gap-4 text-sm">
@@ -214,27 +214,27 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="p-6">
                     <h4 class="text-lg font-bold text-white mb-2">Cryptographic Attestation</h4>
-                    <p class="text-sm text-slate-400">Every decision is logged with an AWS NSM Attestation Document, proving the evaluation logic ran untampered inside the secure hardware.</p>
+                    <p class="text-sm text-slate-400">Decisions are logged with an AWS NSM Attestation Document, proving the enclave's evaluation logic ran untampered inside the secure hardware.</p>
                 </div>
                 <div class="p-6">
-                    <h4 class="text-lg font-bold text-white mb-2">Multi-Tenant RBAC</h4>
-                    <p class="text-sm text-slate-400">Super Admin, Org Admin, and Auditor roles with strict data isolation and SOC2 compliant audit trails.</p>
+                    <h4 class="text-lg font-bold text-white mb-2">Granular RBAC</h4>
+                    <p class="text-sm text-slate-400">Super Admin, Org Admin, and Auditor roles with SOC2-compliant, hash-chained audit trails and tamper-evident integrity verification.</p>
                 </div>
                 <div class="p-6">
-                    <h4 class="text-lg font-bold text-white mb-2">GitOps Policy Management</h4>
-                    <p class="text-sm text-slate-400">Propose policy changes via Pull Requests. CI/CD rebuilds the Enclave and updates the PCR0 hash.</p>
+                    <h4 class="text-lg font-bold text-white mb-2">Signed Policy Enforcement</h4>
+                    <p class="text-sm text-slate-400">Two-person approval: an org admin proposes, a super admin approves. Policies are Ed25519-signed and verified inside the enclave before any allowlist change takes effect.</p>
                 </div>
                 <div class="p-6">
                     <h4 class="text-lg font-bold text-white mb-2">Rogue Insider Protection</h4>
-                    <p class="text-sm text-slate-400">If policy.json is tampered with, the PCR0 hash changes, and AWS KMS mathematically denies access to the agent's keys.</p>
+                    <p class="text-sm text-slate-400">The baked policy is measured into the enclave's PCR0, so tampering changes the hash and the platform refuses to attest it. Runtime policies are only enforced with a valid Enclavia signature.</p>
                 </div>
                 <div class="p-6">
-                    <h4 class="text-lg font-bold text-white mb-2">Zero-Touch CI/CD</h4>
-                    <p class="text-sm text-slate-400">Fully automated deployment via GitHub Actions. Push to main to deploy the Control Plane and Data Plane automatically.</p>
+                    <h4 class="text-lg font-bold text-white mb-2">Infrastructure as Code</h4>
+                    <p class="text-sm text-slate-400">Provision the control plane and data plane with Terraform, then deploy updates via GitHub Actions.</p>
                 </div>
                 <div class="p-6">
-                    <h4 class="text-lg font-bold text-white mb-2">BYOC Architecture</h4>
-                    <p class="text-sm text-slate-400">Bring Your Own Cloud. The customer's raw data never leaves their VPC; only audit logs are sent to Enclavia.</p>
+                    <h4 class="text-lg font-bold text-white mb-2">Self-Hosted in Your VPC</h4>
+                    <p class="text-sm text-slate-400">The control plane and data plane run entirely inside your AWS account. Your raw data never leaves your environment.</p>
                 </div>
             </div>
         </div>
